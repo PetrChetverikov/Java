@@ -1,17 +1,19 @@
 public class P4 {
-    public static void main(String[] args) {
-        String log; 
-        String pass;
 
-        log = "u1";
-        pass = "p1";
 
-        if ((log.equals(args[0])) & (pass.equals(args[1]))) {
-            System.out.print("\t\tВас узнали. Добро пожаловать!");
+        public static void main(String args[]) {
+            int max = 0;
+            int[] myArray = new int[10];
+            for (int i = 0; i < myArray.length; i++) {
+                myArray[i] = -100 + (int) (Math.random()*200);
+                System.out.print("\t" + myArray[i]);
+                if (Math.abs(myArray[i]) >= max)
+                    max = myArray[i];
+            }
+            System.out.print("\n" + "\n");
+            for (int i = 0; i < myArray.length; i++) {
+                myArray[i] += max;
+                System.out.print("\t" + myArray[i]);
+            }
         }
-        else {
-            System.out.print("\t\tЛогин и пароль не распознаны. Доступ запрещён.");
-        }
-
     }
-}
